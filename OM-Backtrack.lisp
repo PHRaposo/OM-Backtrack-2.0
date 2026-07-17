@@ -34,18 +34,26 @@
 ;Variable definiton with files to load 
 ;--------------------------------------------------
 
+(defvar *om-backtrack-icon-folder* nil)
+(setf *om-backtrack-icon-folder*
+      (make-pathname :host (pathname-host *load-pathname*)
+                     :device (pathname-device *load-pathname*)
+                     :directory (append (pathname-directory *load-pathname*)
+                                        '("resources" "icon"))))
+                                        
 (defvar *backtrack-files* nil)
 (setf  *backtrack-files* (list	
                          (om::om-relative-path '("sources" "screamer 4.0.1") "package")
                          (om::om-relative-path '("sources" "screamer 4.0.1") "screamer")
-                         (om::om-relative-path '("sources") "screaminterface") 					 
+                         (om::om-relative-path '("sources") "screaminterface")
                          (om::om-relative-path '("sources") "screamer-additions")
-			                   (om::om-relative-path '("sources") "screamboxes")
+                         (om::om-relative-path '("sources") "screamboxes")
                          (om::om-relative-path '("sources") "screamfuns")
-                         (om::om-relative-path '("sources") "om-interface")                         
-			                   (om::om-relative-path '("sources") "non-deter-patch")								  							 
+                         (om::om-relative-path '("sources") "om-interface")
+                         (om::om-relative-path '("sources") "non-deter-patch")
+                         ;(om::om-relative-path '("sources") "nondeterministic-patch")
                           ))
-						 
+
 ;--------------------------------------------------
 ;Loading files 
 ;--------------------------------------------------
@@ -72,7 +80,7 @@
                 ("constraints" nil nil (apply-cont assert! alldiff? growing?) nil)
                 ("valuation" nil nil (one-value all-values print-values ith-value n-values possibly? necessarily?) nil)					
                ))
- 				
+
 (print (format nil "
 OM-BACKTRACK was based on the original version for OM 4
  by Gerard Assayag and Augusto Agon
@@ -80,7 +88,7 @@ OM-BACKTRACK was based on the original version for OM 4
    
  It was adapted to OM 7.2 by Paulo Henrique Raposo and Karim Haddad
 
-* OM-BACKTRACK VERSION 2.1.0 is an expansion of the previous version.
+* OM-BACKTRACK VERSION 2.2.0 is an expansion of the previous version.
   Copyright (C) 2024 - Paulo Henrique Raposo
    
   LISP LIBRARIES:
@@ -93,5 +101,6 @@ OM-BACKTRACK was based on the original version for OM 4
     
   Maintaner: Nikodemus Siivola <https://github.com/nikodemus/screamer>
   
-  New rational numbers support: Paulo Henrique Raposo (from version 4.0.1 - 2025)" 
-s::*screamer-version*))
+  New rational numbers support: Paulo Henrique Raposo (from version 4.0.1 - 2025)"
+;*om-backtrack-version*
+ s::*screamer-version*))

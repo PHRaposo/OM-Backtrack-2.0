@@ -37,12 +37,13 @@ width height) nil)
     (setf value-item-view
           (cond 
            ((omclass-p (class-of (class-of value)))
-            (setf dialog (om-make-window 'non-deter-window 
+            (setf dialog (om-make-window 'non-deter-window
                                          :window-title "Non Deterministic Listener"
-                                         :position :centered 
+                                         :position :centered
                                          ;:window-show nil
                                          :size (om-make-point 600 350) ;*screamer-listener-size*
                                          ;:font (om-make-font "Arial" 12 :mode :srcor :style :plain)
+                                         #+win32 :resizable t
                                          :bg-color (om-make-color 0.875 0.875 0.875)))
             (cond
              ((Class-has-editor-p value)
