@@ -11,7 +11,7 @@
 ;;; 
 ;;; - IN-PROGRESS: FOR-EFFECTS / LOCAL / GLOBAL
 ;;;
-        			   
+                       
 (in-package :om)
 
 (defmethod get-real-funname ((self t)) self)
@@ -354,7 +354,7 @@ Output : t if the list is growing
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; SCREAMER VALUATION METHODS
-	  
+      
 (defmethod get-boxcallclass-fun ((self (eql 'one-value))) 'screamer-valuation-boxes)
 (defmethod get-real-funname ((self (eql 'one-value))) self)
 (defmethod! one-value ((expression t) &optional (default-expression '(screamer::fail)))
@@ -362,8 +362,8 @@ Output : t if the list is growing
 :indoc '("expressions" "fail")
 :doc "OM equivalent of SCREAMER::ONE-VALUE macro." 
 :icon 486 
-(screamer::one-value expression default-expression))	
-	    
+(screamer::one-value expression default-expression))    
+        
 (defmethod get-boxcallclass-fun ((self (eql 'all-values))) 'screamer-valuation-boxes)
 (defmethod get-real-funname ((self (eql 'all-values))) self)
 (defmethod! all-values  ((expressions t))
@@ -371,7 +371,7 @@ Output : t if the list is growing
 :indoc '("expressions")
 :doc "OM equivalent of SCREAMER::ALL-VALUES macro." 
 :icon 486 
-(screamer::all-values expressions))	
+(screamer::all-values expressions)) 
 
 (defmethod get-boxcallclass-fun ((self (eql 'print-values))) 'screamer-valuation-boxes)
 (defmethod get-real-funname ((self (eql 'print-values))) self)
@@ -389,7 +389,7 @@ Output : t if the list is growing
 :indoc '("integer" "forms" "fail")
 :doc "OM verion of SCREAMER:ITH-VALUE macro." 
 :icon 486 
-(screamer::ith-value i forms default-expression))	
+(screamer::ith-value i forms default-expression))   
 
 (defmethod get-boxcallclass-fun ((self (eql 'n-values))) 'screamer-valuation-boxes)
 (defmethod get-real-funname ((self (eql 'n-values))) self)

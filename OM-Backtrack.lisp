@@ -35,17 +35,17 @@
 ;--------------------------------------------------
 
 (defvar *backtrack-files* nil)
-(setf  *backtrack-files* (list	
+(setf  *backtrack-files* (list  
                          (om::om-relative-path '("sources" "screamer 4.0.1") "package")
                          (om::om-relative-path '("sources" "screamer 4.0.1") "screamer")
-                         (om::om-relative-path '("sources") "screaminterface") 					 
+                         (om::om-relative-path '("sources") "screaminterface")
                          (om::om-relative-path '("sources") "screamer-additions")
-			                   (om::om-relative-path '("sources") "screamboxes")
+                         (om::om-relative-path '("sources") "screamboxes")
                          (om::om-relative-path '("sources") "screamfuns")
                          (om::om-relative-path '("sources") "om-interface")                         
-			                   (om::om-relative-path '("sources") "non-deter-patch")								  							 
+                         (om::om-relative-path '("sources") "non-deter-patch")                                                             
                           ))
-						 
+
 ;--------------------------------------------------
 ;Loading files 
 ;--------------------------------------------------
@@ -70,9 +70,9 @@
                         list-of-chords-in
                         ) nil)
                 ("constraints" nil nil (apply-cont assert! alldiff? growing?) nil)
-                ("valuation" nil nil (one-value all-values print-values ith-value n-values possibly? necessarily?) nil)					
+                ("valuation" nil nil (one-value all-values print-values ith-value n-values possibly? necessarily?) nil)                 
                ))
- 				
+                
 (print (format nil "
 OM-BACKTRACK was based on the original version for OM 4
  by Gerard Assayag and Augusto Agon
